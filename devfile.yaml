@@ -5,6 +5,11 @@ components:
   - name: tools
     container:
       image: quay.io/devfile/universal-developer-image:ubi8-latest
+      endpoints:
+        - exposure: public
+          name: 8080-tcp
+          protocol: http
+          targetPort: 8080
       volumeMounts:
         - name: venv
           path: /home/user/.venv
